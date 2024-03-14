@@ -15,11 +15,13 @@ public class SkillTarget : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        targetList.Add(other);
+       targetList.Add(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
+ 
         targetList.Remove(other);
+
     }
 }

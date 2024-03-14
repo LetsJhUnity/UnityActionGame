@@ -86,28 +86,32 @@ public class EnemyHealth : MonoBehaviour
     /// <returns></returns>
     public IEnumerator StartDamage(int damage, Vector3 playerPosition, float delay , float pushback)
     {
-        yield return new WaitForSeconds(delay);
-        //딜레이 시간 뒤 다시 작업을 진행합니다.
-
-        //try는 예외 상황이 발생할 수 잇는 코드에 작성해주는 예외 처리문
-        try
+        if(gameObject != null)
         {
-            //데미지를 줍니다.
-            TakeDamage(damage);
-            //거리를 측정합니다.
-            Vector3 diff = playerPosition - transform.position;
-            //거리의 범위만큼 나눠줍니다.
-            diff /= diff.sqrMagnitude;
-            //물체에서 그 수치만큼 튕겨나가도록 연출하겠습니다.
-            GetComponent<Rigidbody>().AddForce((transform.position - new Vector3(diff.x, diff.y, 0.0f)) * 50f * pushback);
-        }
-        catch(MissingReferenceException e)
-        //코루틴을 돌리고 있는 상황에서 객체가 사라진 상태에서 다시 그 객체를 참조하려고 할 때 발생하는 오류
-        //현재 슬라임이 체력이 0보다 낮아지면 Destroy되는 상황이기에 Missing이 날 수 밖에 없는 상황
-        {
-            Debug.LogError(e.ToString());
-        }
+            yield return new WaitForSeconds(delay);
+            //딜레이 시간 뒤 다시 작업을 진행합니다.
 
+            //try는 예외 상황이 발생할 수 잇는 코드에 작성해주는 예외 처리문
+            try
+            {
+                //데미지를 줍니다.
+                TakeDamage(damage);
+                //거리를 측정합니다.
+                Vector3 diff = playerPosition - transform.position;
+                //거리의 범위만큼 나눠줍니다.
+                diff /= diff.sqrMagnitude;
+                //물체에서 그 수치만큼 튕겨나가도록 연출하겠습니다.
+                GetComponent<Rigidbody>().AddForce((transform.position - new Vector3(diff.x, diff.y, 0.0f)) * 50f * pushback);
+            }
+            catch (MissingReferenceException e)
+            //코루틴을 돌리고 있는 상황에서 객체가 사라진 상태에서 다시 그 객체를 참조하려고 할 때 발생하는 오류
+            //현재 슬라임이 체력이 0보다 낮아지면 Destroy되는 상황이기에 Missing이 날 수 밖에 없는 상황
+            {
+                Debug.Log(e.ToString());
+            }
+
+        }
+      
     }
 
     /// <summary>

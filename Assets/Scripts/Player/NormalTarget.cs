@@ -18,13 +18,13 @@ public class NormalTarget : MonoBehaviour
     //트리거 충돌 시 리스트 명단에 타겟을 등록
     private void OnTriggerEnter(Collider other)
     {
-        targetList.Add(other);
+         targetList.Add(other);
     }
     //트리거 충돌이 끝나면 리스트 명단에서 타겟을 제거
     private void OnTriggerExit(Collider other)
     {
-        targetList.Remove(other);
+         targetList.Remove(other);
+        
     }
-
 
 }
