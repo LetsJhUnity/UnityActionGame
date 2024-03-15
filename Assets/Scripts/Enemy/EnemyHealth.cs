@@ -120,6 +120,7 @@ public class EnemyHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+        StageController.instance.AddPoint(10);
 
         transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = true;
         //애니메이션 트리거 작동

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DialogController">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAUgAAIAIAAAACAAEA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogControllerAlert">
+    <Position X="11.5" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogControllerAlert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogControllerConfirm">
+    <Position X="5.75" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogControllerConfirm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogData">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogDataAlert">
+    <Position X="1" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogDataAlert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogDataConfirm">
+    <Position X="5.25" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogDataConfirm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogManager">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAABAAAAgAAAAAAAAAADAAABAQAAAAAEAGAA=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DialogType">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Dialog\DialogManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Malgun Gothic" Size="9" />
+</ClassDiagram>
