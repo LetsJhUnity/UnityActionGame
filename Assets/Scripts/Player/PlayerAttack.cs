@@ -23,8 +23,9 @@ public class PlayerAttack : MonoBehaviour
         //1. 노멀 타겟의 리스트를 조회합니다.
         List<Collider> targetList = new List<Collider>(normalTarget.targetList);
 
+
         //2.타겟 리스트 안의 몬스터를 전체 조회합니다.
-        foreach(var one  in targetList)
+        foreach (var one  in targetList)
         {
             EnemyHealth enemy = one.GetComponent<EnemyHealth>();
 
@@ -45,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
         //1. 스킬 타겟의 리스트를 조회합니다.
         List<Collider> targetList = new List<Collider>(skillTarget.targetList);
 
-        //2. 리스트 안의 몬스터들을 전체 조회합니다.
+         //2. 리스트 안의 몬스터들을 전체 조회합니다.
         foreach (var one in targetList)
         {
             EnemyHealth enemy = one.GetComponent<EnemyHealth>();

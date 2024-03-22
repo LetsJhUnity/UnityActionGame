@@ -88,9 +88,9 @@ public sealed class DialogManager
     private void ShowNext()
     {
         //다이얼로그를 리스트에서 첫번째 값을 가져오겠습니다.
-        var next = _dialogQueue[0];
+        DialogData next = _dialogQueue[0];
         //가져온 값의 형태를 확인해 어떤 컨트롤러인지를 확인합니다.
-        var controller = _dialogMap[next.Type].GetComponent<DialogController>();  
+        DialogController controller = _dialogMap[next.Type].GetComponent<DialogController>();  
         //조회한 다이얼로그 컨트롤러를 현재의 다이얼로그 컨트롤러로 지정합니다.
         _currentDialog = controller;
         //현재의 다이얼로그를 빌드하겠습니다.

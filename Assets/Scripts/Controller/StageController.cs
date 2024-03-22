@@ -19,14 +19,17 @@ public class StageController : MonoBehaviour
     //따로 연결해서 쓸 필요가 없어서 편리합니다.
 
     //2024 -3-15 Awake -> Start 
-    private void Start()
+    void Start()
     {
+        // Instance 변수에 현재 클래스의 인스턴스를 설정합니다.
         instance = this;
-        //안내창 값 설정
-        var alert = new DialogDataAlert("게임 시작", "소환되는 슬라임들을 무자비하게 도륙하세요.", delegate () { Debug.Log("OK를 눌렀습니다!"); });
-
-        //매니저에 등록
+        // 다이얼로그 데이터를 하나 생성합니다. 제목하고 내용, 그리고 콜백함수를 매개변수로 전달합니다. 
+        DialogDataAlert alert = new DialogDataAlert("START", "Game Start!", delegate () {
+            Debug.Log("OK Pressed");
+        });
+        // 생성한 Alert 다이얼로그 데이터를 DialogManager에 추가합니다.
         DialogManager.Instance.Push(alert);
+
     }
 
     public void AddPoint(int point)
@@ -34,11 +37,26 @@ public class StageController : MonoBehaviour
         StagePoint += point;
         PointText.text = StagePoint.ToString();
     }
+        
 
-    public void FinishGame()
+	public void FinishGame()
     {
-        //Application.LoadLevel(Application.loadedLevel); 구 버전 코드(현재는 쓰지 않습니다.)
-        SceneManager.LoadScene("Game");
-    
+        // DialogDataConfirm 클래스의 인스턴스를 생성합니다.
+        // 이때 제목(Title), 내용(Message), 콜백함수(delegate(bool yn))을 매개변수로 전달합니다.
+        DialogDataConfirm confirm = new DialogDataConfirm("Restart?", "Please press OK if you want to restart the game.",
+            delegate (bool yn) {
+                if (yn)
+                {
+                    Debug.Log("OK Pressed");
+                    SceneManager.LoadScene("Game");
+                }
+                else
+                {
+                    Debug.Log("Cancel Pressed");
+                    Application.Quit();
+                }
+            });
+        // 생성한 다이얼로그 데이터를 다이얼로그 매니저에게 전달합니다.
+        DialogManager.Instance.Push(confirm);
     }
 }
